@@ -4,13 +4,13 @@
 [![Documentation Quality](http://inch-ci.org/github/teoljungberg/fx.svg?branch=master)](http://inch-ci.org/github/teoljungberg/fx)
 
 F(x) adds methods to `ActiveRecord::Migration` to create and manage database
-functions and triggers in Rails.
+functions, operators, and triggers in Rails.
 
-Using F(x), you can bring the power of SQL functions and triggers to your Rails
+Using F(x), you can bring the power of SQL functions, operators, and triggers to your Rails
 application without having to switch your schema format to SQL. F(x) provides
-a convention for versioning functions and triggers that keeps your migration
+a convention for versioning functions, operators, and triggers that keeps your migration
 history consistent and reversible and avoids having to duplicate SQL strings
-across migrations. As an added bonus, you define the structure of your function
+across migrations. As an added bonus, you define the structure of your function or operator
 in a SQL file, meaning you get full SQL syntax highlighting in the editor of
 your choice and can easily test your SQL in the database console during
 development.
@@ -19,7 +19,7 @@ F(x) ships with support for PostgreSQL. The adapter is configurable (see
 `Fx::Configuration`) and has a minimal interface (see
 `Fx::Adapters::Postgres`) that other gems can provide.
 
-## Great, how do I create a trigger and a function?
+## Great, how do I create a trigger, an operator, and a function?
 
 You've got this great idea for a function you'd like to call
 `uppercase_users_name`. You can create the migration and the corresponding
@@ -33,6 +33,8 @@ definition file with the following command:
 
 Edit the `db/functions/uppercase_users_name_v01.sql` file with the SQL statement
 that defines your function.
+
+Let's suppose you want to add a custom operator called `+` for jsonb datatypes.
 
 Next, let's add a trigger called `uppercase_users_name` to call our new
 function each time we `INSERT` on the `users` table.

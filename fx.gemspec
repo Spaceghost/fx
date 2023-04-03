@@ -7,10 +7,9 @@ Gem::Specification.new do |spec|
   spec.version = Fx::VERSION
   spec.authors = ["Teo Ljungberg"]
   spec.email = ["teo@teoljungberg.com"]
-  spec.summary = "Support for database functions and triggers in Rails migrations"
+  spec.summary = "Support for database functions, operators, and triggers in Rails migrations"
   spec.description = <<-DESCRIPTION
-    Adds methods to ActiveRecord::Migration to create and manage database functions
-    and triggers in Rails
+    Adds methods to ActiveRecord::Migration to create and manage database functions, operators, and triggers in Rails
   DESCRIPTION
   spec.homepage = "https://github.com/teoljungberg/fx"
   spec.license = "MIT"
